@@ -3,6 +3,8 @@ package petexplorer;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import petexplorer.domain.CabinetVeterinar;
+import petexplorer.domain.PensiuneCanina;
+import petexplorer.domain.Salon;
 import petexplorer.domain.User;
 import petexplorer.utils.HibernateUtils;
 
@@ -19,6 +21,14 @@ public class Main {
                 .createQuery("from CabinetVeterinar", CabinetVeterinar.class)
                 .getResultList();
 
+        List<PensiuneCanina> pensiuniCanine = session
+                .createQuery("from PensiuneCanina", PensiuneCanina.class)
+                .getResultList();
+
+        List<Salon> saloane = session
+                .createQuery("from Salon", Salon.class)
+                .getResultList();
+
         session.close();
 
         System.out.println("Toți utilizatorii:");
@@ -29,6 +39,16 @@ public class Main {
         System.out.println("Toate cabinetele veterinare:");
         for (CabinetVeterinar cabinetVeterinar : cabinetVeterinars) {
             System.out.println(cabinetVeterinar);
+        }
+
+        System.out.println("Toate pensiunile canine");
+        for (PensiuneCanina p : pensiuniCanine) {
+            System.out.println(p);
+        }
+
+        System.out.println("Toate saloanele");
+        for (Salon salon : saloane) {
+            System.out.println(salon);
         }
     }
 }
