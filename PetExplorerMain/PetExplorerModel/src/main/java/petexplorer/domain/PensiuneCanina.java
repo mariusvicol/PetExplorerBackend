@@ -1,41 +1,71 @@
 package petexplorer.domain;
 
 import java.io.Serializable;
+import jakarta.persistence.Column;
+import jakarta.persistence.Table;
+
+@jakarta.persistence.Entity
+@Table(name = "pensiuni_canine")
 
 public class PensiuneCanina extends Entity<Integer> implements Serializable {
 
-    private Float latitudine;
-    private Float longitudine;
-    private String numePensiune;
+    @Column(nullable = false)
+    private Float latitude;
+
+    @Column(nullable = false)
+    private Float longitude;
+
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = true)
     private String nrTel;
-    private Boolean nonStop;
+
+    @Column(nullable = true)
+    private Boolean non_stop;
 
     public PensiuneCanina() {}
 
     public PensiuneCanina(Float latitudine, Float longitudine, String numePensiune, String nrTel, Boolean nonStop) {
-        this.latitudine = latitudine;
-        this.longitudine = longitudine;
-        this.numePensiune = numePensiune;
+        this.latitude = latitudine;
+        this.longitude = longitudine;
+        this.name = numePensiune;
         this.nrTel = nrTel;
-        this.nonStop = nonStop;
+        this.non_stop = nonStop;
     }
 
     public PensiuneCanina(Integer id, Float latitudine, Float longitudine, String numePensiune, String nrTel, Boolean nonStop) {
         this.setId(id);
 
-        this.latitudine = latitudine;
-        this.longitudine = longitudine;
-        this.numePensiune = numePensiune;
+        this.latitude = latitudine;
+        this.longitude = longitudine;
+        this.name = numePensiune;
         this.nrTel = nrTel;
-        this.nonStop = nonStop;
+        this.non_stop = nonStop;
     }
 
-    public Boolean getNonStop() {
-        return nonStop;
+    public Float getLongitude() {
+        return longitude;
     }
 
-    public void setNonStop(Boolean nonStop) {
-        this.nonStop = nonStop;
+    public void setLongitude(Float longitude) {
+        this.longitude = longitude;
+    }
+
+    public Float getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(Float latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getNrTel() {
@@ -46,38 +76,22 @@ public class PensiuneCanina extends Entity<Integer> implements Serializable {
         this.nrTel = nrTel;
     }
 
-    public String getNumePensiune() {
-        return numePensiune;
+    public Boolean getNon_stop() {
+        return non_stop;
     }
 
-    public void setNumePensiune(String numePensiune) {
-        this.numePensiune = numePensiune;
-    }
-
-    public Float getLongitudine() {
-        return longitudine;
-    }
-
-    public void setLongitudine(Float longitudine) {
-        this.longitudine = longitudine;
-    }
-
-    public Float getLatitudine() {
-        return latitudine;
-    }
-
-    public void setLatitudine(Float latitudine) {
-        this.latitudine = latitudine;
+    public void setNon_stop(Boolean non_stop) {
+        this.non_stop = non_stop;
     }
 
     @Override
     public String toString() {
-        return "PensiuniCanine{" +
-                "latitudine=" + latitudine +
-                ", longitudine=" + longitudine +
-                ", numePensiune='" + numePensiune + '\'' +
+        return "PensiuneCanina{" +
+                "latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", name='" + name + '\'' +
                 ", nrTel='" + nrTel + '\'' +
-                ", nonStop=" + nonStop +
+                ", non_stop=" + non_stop +
                 '}';
     }
 }
