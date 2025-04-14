@@ -4,7 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 
 import java.io.Serializable;
-import java.io.*;
+
 
 @jakarta.persistence.Entity
 @Table(name = "parcuri")
