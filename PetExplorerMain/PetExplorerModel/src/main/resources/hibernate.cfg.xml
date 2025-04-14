@@ -23,5 +23,6 @@
         <mapping class="petexplorer.domain.User"/>
         <mapping class="petexplorer.domain.PensiuneCanina"/>
         <mapping class="petexplorer.domain.Salon"/>
+
     </session-factory>
 </hibernate-configuration>
