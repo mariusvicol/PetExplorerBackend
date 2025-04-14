@@ -5,6 +5,7 @@ import jakarta.persistence.Table;
 import java.io.Serializable;
 
 @Table(name = "magazine_veterinare")
+
 public class Magazin extends Entity<Integer> implements Serializable {
     @Column(nullable = false)
     private Float longitudine;
