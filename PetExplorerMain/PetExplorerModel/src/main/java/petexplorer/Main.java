@@ -9,6 +9,7 @@ import petexplorer.utils.HibernateUtils;
 import java.util.List;
 public class Main {
     public static void main(String[] args) {
+        // Initialize Hibernate
         Session session = HibernateUtils.getSessionFactory().openSession();
 
         List<User> users = session
