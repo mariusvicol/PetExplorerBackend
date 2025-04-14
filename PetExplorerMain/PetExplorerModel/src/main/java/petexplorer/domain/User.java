@@ -5,6 +5,7 @@ import jakarta.persistence.Table;
 
 import java.io.Serializable;
 
+@jakarta.persistence.Entity
 @Table(name = "users")
 public class User extends Entity<Integer> implements Serializable {
 
@@ -15,10 +16,10 @@ public class User extends Entity<Integer> implements Serializable {
     private String password;
 
     @Column(nullable = false)
-    private String name;
+    private String nume;
 
     @Column(nullable = true)
-    private String nrTelefon;
+    private String nr_telefon;
 
     public User() {
     }
@@ -26,8 +27,8 @@ public class User extends Entity<Integer> implements Serializable {
     public User(String email, String password, String name, String nrTelefon) {
         this.email = email;
         this.password = password;
-        this.name = name;
-        this.nrTelefon = nrTelefon;
+        this.nume = name;
+        this.nr_telefon = nrTelefon;
     }
 
     public String getEmail() {
@@ -46,20 +47,20 @@ public class User extends Entity<Integer> implements Serializable {
         this.password = password;
     }
 
-    public String getName() {
-        return this.name;
+    public String getNume() {
+        return this.nume;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNume(String name) {
+        this.nume = name;
     }
 
     public String getNrTelefon() {
-        return nrTelefon;
+        return nr_telefon;
     }
 
     public void setNrTelefon(String nrTelefon) {
-        this.nrTelefon = nrTelefon;
+        this.nr_telefon = nrTelefon;
     }
 
     @Override
@@ -68,8 +69,8 @@ public class User extends Entity<Integer> implements Serializable {
                 "id=" + id +  // Afișăm și id-ul moștenit din Entity
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", name='" + name + '\'' +
-                ", nrTelefon='" + nrTelefon + '\'' +
+                ", name='" + nume + '\'' +
+                ", nrTelefon='" + nr_telefon + '\'' +
                 '}';
     }
 }
