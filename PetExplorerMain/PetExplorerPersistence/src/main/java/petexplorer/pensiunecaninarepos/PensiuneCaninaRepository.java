@@ -1,9 +1,8 @@
-package petexplorer.implementation;
+package petexplorer.pensiunecaninarepos;
 
-import petexplorer.IPensiuneCaninaRepository;
 import petexplorer.domain.PensiuneCanina;
 
-public class PensiuneCaninaRepository implements IPensiuneCaninaRepository {
+public class PensiuneCaninaRepository implements IPensiuneCaninaRepository{
     @Override
     public PensiuneCanina findOne(Integer integer) {
         return null;
