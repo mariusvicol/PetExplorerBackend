@@ -9,7 +9,6 @@ import java.io.Serializable;
 
 @MappedSuperclass
 public class Entity<T> implements Serializable {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected T id;
