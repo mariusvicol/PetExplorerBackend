@@ -16,13 +16,13 @@ public class CabinetVeterinar extends Entity<Integer> implements Serializable {
     private Float longitudine;
 
     @Column(nullable = false)
-    private String numeCabinet;
+    private String nume_cabinet;
 
     @Column(nullable = true)
     private String nrTelefon;
 
     @Column(nullable = false)
-    private Boolean nonStop;
+    private Boolean non_stop;
 
     public CabinetVeterinar() {
     }
@@ -30,9 +30,9 @@ public class CabinetVeterinar extends Entity<Integer> implements Serializable {
     public CabinetVeterinar(Float latitudine, Float longitudine, String numeCabinet, String nrTelefon, Boolean nonStop) {
         this.latitudine = latitudine;
         this.longitudine = longitudine;
-        this.numeCabinet = numeCabinet;
+        this.nume_cabinet = numeCabinet;
         this.nrTelefon = nrTelefon;
-        this.nonStop = nonStop;
+        this.non_stop = nonStop;
     }
 
     public Float getLatitudine() {
@@ -52,11 +52,11 @@ public class CabinetVeterinar extends Entity<Integer> implements Serializable {
     }
 
     public String getNumeCabinet() {
-        return numeCabinet;
+        return nume_cabinet;
     }
 
     public void setNumeCabinet(String numeCabinet) {
-        this.numeCabinet = numeCabinet;
+        this.nume_cabinet = numeCabinet;
     }
 
     public String getNrTelefon() {
@@ -68,11 +68,11 @@ public class CabinetVeterinar extends Entity<Integer> implements Serializable {
     }
 
     public Boolean getNonStop() {
-        return nonStop;
+        return non_stop;
     }
 
     public void setNonStop(Boolean nonStop) {
-        this.nonStop = nonStop;
+        this.non_stop = nonStop;
     }
 
     @Override
@@ -91,9 +91,9 @@ public class CabinetVeterinar extends Entity<Integer> implements Serializable {
                 "id=" + id +
                 ", latitudine=" + latitudine +
                 ", longitudine=" + longitudine +
-                ", numeCabinet='" + numeCabinet + '\'' +
+                ", numeCabinet='" + nume_cabinet + '\'' +
                 ", nrTelefon='" + nrTelefon + '\'' +
-                ", nonStop=" + nonStop +
+                ", nonStop=" + non_stop +
                 '}';
     }
 }
