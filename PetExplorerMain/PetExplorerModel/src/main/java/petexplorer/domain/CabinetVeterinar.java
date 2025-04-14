@@ -5,6 +5,7 @@ import jakarta.persistence.Table;
 
 import java.io.Serializable;
 
+@jakarta.persistence.Entity
 @Table(name = "cabinete_veterinare")
 public class CabinetVeterinar extends Entity<Integer> implements Serializable {
 
