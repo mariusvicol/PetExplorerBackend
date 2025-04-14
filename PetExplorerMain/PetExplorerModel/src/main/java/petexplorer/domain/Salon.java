@@ -1,82 +1,97 @@
 package petexplorer.domain;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Table;
+
 import java.io.Serializable;
 
+@jakarta.persistence.Entity
+@Table(name = "saloane")
 public class Salon extends Entity<Integer> implements Serializable {
-    private Float latitudine;
-    private Float longitudine;
-    private String numeSalon;
-    private String nrTelefon;
-    private Boolean nonStop;
+
+    @Column(nullable = false)
+    private Float latitude;
+
+    @Column(nullable = false)
+    private Float longitude;
+
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = true)
+    private String nrTel;
+
+    @Column(nullable = true)
+    private Boolean non_stop;
 
     public Salon () {}
 
     public Salon(Float latitudine, Float longitudine, String numeSalon, String nrTelefon, Boolean nonStop) {
-        this.latitudine = latitudine;
-        this.longitudine = longitudine;
-        this.numeSalon = numeSalon;
-        this.nrTelefon = nrTelefon;
-        this.nonStop = nonStop;
+        this.latitude = latitudine;
+        this.longitude = longitudine;
+        this.name = numeSalon;
+        this.nrTel = nrTelefon;
+        this.non_stop = nonStop;
     }
 
     public Salon(Integer id, Float latitudine, Float longitudine, String numeSalon, String nrTelefon, Boolean nonStop) {
         this.setId(id);
 
-        this.latitudine = latitudine;
-        this.longitudine = longitudine;
-        this.numeSalon = numeSalon;
-        this.nrTelefon = nrTelefon;
-        this.nonStop = nonStop;
+        this.latitude = latitudine;
+        this.longitude = longitudine;
+        this.name = numeSalon;
+        this.nrTel = nrTelefon;
+        this.non_stop = nonStop;
     }
 
-    public Float getLatitudine() {
-        return latitudine;
+    public Float getLatitude() {
+        return latitude;
     }
 
-    public void setLatitudine(Float latitudine) {
-        this.latitudine = latitudine;
+    public void setLatitude(Float latitude) {
+        this.latitude = latitude;
     }
 
-    public Float getLongitudine() {
-        return longitudine;
+    public Float getLongitude() {
+        return longitude;
     }
 
-    public void setLongitudine(Float longitudine) {
-        this.longitudine = longitudine;
+    public void setLongitude(Float longitude) {
+        this.longitude = longitude;
     }
 
-    public String getNumeSalon() {
-        return numeSalon;
+    public String getNrTel() {
+        return nrTel;
     }
 
-    public void setNumeSalon(String numeSalon) {
-        this.numeSalon = numeSalon;
+    public void setNrTel(String nrTel) {
+        this.nrTel = nrTel;
     }
 
-    public String getNrTelefon() {
-        return nrTelefon;
+    public String getName() {
+        return name;
     }
 
-    public void setNrTelefon(String nrTelefon) {
-        this.nrTelefon = nrTelefon;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Boolean getNonStop() {
-        return nonStop;
+    public Boolean getNon_stop() {
+        return non_stop;
     }
 
-    public void setNonStop(Boolean nonStop) {
-        this.nonStop = nonStop;
+    public void setNon_stop(Boolean non_stop) {
+        this.non_stop = non_stop;
     }
 
     @Override
     public String toString() {
         return "Salon{" +
-                "latitudine=" + latitudine +
-                ", longitudine=" + longitudine +
-                ", numeSalon='" + numeSalon + '\'' +
-                ", nrTelefon='" + nrTelefon + '\'' +
-                ", nonStop=" + nonStop +
+                "latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", name='" + name + '\'' +
+                ", nrTel='" + nrTel + '\'' +
+                ", non_stop=" + non_stop +
                 '}';
     }
 }
