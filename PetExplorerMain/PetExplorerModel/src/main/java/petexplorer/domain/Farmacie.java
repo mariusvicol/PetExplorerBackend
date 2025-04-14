@@ -5,6 +5,7 @@ import jakarta.persistence.Table;
 
 import java.io.Serializable;
 
+@jakarta.persistence.Entity
 @Table(name = "farmacii_veterinare")
 public class Farmacie extends Entity<Integer> implements Serializable {
     @Column(nullable = false)

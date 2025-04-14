@@ -7,6 +7,7 @@ import jakarta.persistence.MappedSuperclass;
 
 import java.io.Serializable;
 
+
 @MappedSuperclass
 public class Entity<T> implements Serializable {
 
