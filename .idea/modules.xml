@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/PetExplorerMain.iml" filepath="$PROJECT_DIR$/PetExplorerMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PetExplorerModel/PetExplorerMain.PetExplorerModel.iml" filepath="$PROJECT_DIR$/.idea/modules/PetExplorerModel/PetExplorerMain.PetExplorerModel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PetExplorerModel/PetExplorerMain.PetExplorerModel.main.iml" filepath="$PROJECT_DIR$/.idea/modules/PetExplorerModel/PetExplorerMain.PetExplorerModel.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PetExplorerModel/PetExplorerMain.PetExplorerModel.test.iml" filepath="$PROJECT_DIR$/.idea/modules/PetExplorerModel/PetExplorerMain.PetExplorerModel.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PetExplorerNetworking/PetExplorerMain.PetExplorerNetworking.iml" filepath="$PROJECT_DIR$/.idea/modules/PetExplorerNetworking/PetExplorerMain.PetExplorerNetworking.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PetExplorerNetworking/PetExplorerMain.PetExplorerNetworking.main.iml" filepath="$PROJECT_DIR$/.idea/modules/PetExplorerNetworking/PetExplorerMain.PetExplorerNetworking.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PetExplorerNetworking/PetExplorerMain.PetExplorerNetworking.test.iml" filepath="$PROJECT_DIR$/.idea/modules/PetExplorerNetworking/PetExplorerMain.PetExplorerNetworking.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PetExplorerPersistence/PetExplorerMain.PetExplorerPersistence.iml" filepath="$PROJECT_DIR$/.idea/modules/PetExplorerPersistence/PetExplorerMain.PetExplorerPersistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PetExplorerPersistence/PetExplorerMain.PetExplorerPersistence.main.iml" filepath="$PROJECT_DIR$/.idea/modules/PetExplorerPersistence/PetExplorerMain.PetExplorerPersistence.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PetExplorerPersistence/PetExplorerMain.PetExplorerPersistence.test.iml" filepath="$PROJECT_DIR$/.idea/modules/PetExplorerPersistence/PetExplorerMain.PetExplorerPersistence.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PetExplorerServer/PetExplorerMain.PetExplorerServer.iml" filepath="$PROJECT_DIR$/.idea/modules/PetExplorerServer/PetExplorerMain.PetExplorerServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PetExplorerServer/PetExplorerMain.PetExplorerServer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/PetExplorerServer/PetExplorerMain.PetExplorerServer.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PetExplorerServer/PetExplorerMain.PetExplorerServer.test.iml" filepath="$PROJECT_DIR$/.idea/modules/PetExplorerServer/PetExplorerMain.PetExplorerServer.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PetExplorerServices/PetExplorerMain.PetExplorerServices.iml" filepath="$PROJECT_DIR$/.idea/modules/PetExplorerServices/PetExplorerMain.PetExplorerServices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PetExplorerServices/PetExplorerMain.PetExplorerServices.main.iml" filepath="$PROJECT_DIR$/.idea/modules/PetExplorerServices/PetExplorerMain.PetExplorerServices.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PetExplorerServices/PetExplorerMain.PetExplorerServices.test.iml" filepath="$PROJECT_DIR$/.idea/modules/PetExplorerServices/PetExplorerMain.PetExplorerServices.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PetExplorerMain.main.iml" filepath="$PROJECT_DIR$/.idea/modules/PetExplorerMain.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PetExplorerMain.test.iml" filepath="$PROJECT_DIR$/.idea/modules/PetExplorerMain.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/PetExplorerServers.iml" filepath="$PROJECT_DIR$/.idea/PetExplorerServers.iml" />
+    </modules>
+  </component>
+</project>

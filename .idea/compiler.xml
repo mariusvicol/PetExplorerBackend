@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="PetExplorerMain" target="23" />
+      <module name="PetExplorerMain.main" target="23" />
+      <module name="PetExplorerMain.PetExplorerModel" target="23" />
+      <module name="PetExplorerMain.PetExplorerModel.main" target="23" />
+      <module name="PetExplorerMain.PetExplorerModel.test" target="23" />
+      <module name="PetExplorerMain.PetExplorerNetworking" target="23" />
+      <module name="PetExplorerMain.PetExplorerNetworking.main" target="23" />
+      <module name="PetExplorerMain.PetExplorerNetworking.test" target="23" />
+      <module name="PetExplorerMain.PetExplorerPersistence" target="23" />
+      <module name="PetExplorerMain.PetExplorerPersistence.main" target="23" />
+      <module name="PetExplorerMain.PetExplorerPersistence.test" target="23" />
+      <module name="PetExplorerMain.PetExplorerServer" target="23" />
+      <module name="PetExplorerMain.PetExplorerServer.main" target="23" />
+      <module name="PetExplorerMain.PetExplorerServer.test" target="23" />
+      <module name="PetExplorerMain.PetExplorerServices" target="23" />
+      <module name="PetExplorerMain.PetExplorerServices.main" target="23" />
+      <module name="PetExplorerMain.PetExplorerServices.test" target="23" />
+      <module name="PetExplorerMain.test" target="23" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

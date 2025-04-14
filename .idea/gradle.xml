@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/PetExplorerMain" />
+        <option name="gradleHome" value="" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/PetExplorerMain" />
+            <option value="$PROJECT_DIR$/PetExplorerMain/PetExplorerModel" />
+            <option value="$PROJECT_DIR$/PetExplorerMain/PetExplorerNetworking" />
+            <option value="$PROJECT_DIR$/PetExplorerMain/PetExplorerPersistence" />
+            <option value="$PROJECT_DIR$/PetExplorerMain/PetExplorerServer" />
+            <option value="$PROJECT_DIR$/PetExplorerMain/PetExplorerServices" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
