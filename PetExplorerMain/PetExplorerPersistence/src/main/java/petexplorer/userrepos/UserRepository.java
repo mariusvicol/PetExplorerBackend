@@ -1,6 +1,5 @@
-package petexplorer.implementation;
+package petexplorer.userrepos;
 
-import petexplorer.IUserRepository;
 import petexplorer.domain.User;
 
 public class UserRepository implements IUserRepository {

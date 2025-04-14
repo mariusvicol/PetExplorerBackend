@@ -1,6 +1,5 @@
-package petexplorer.implementation;
+package petexplorer.cabinetveterinarrepos;
 
-import petexplorer.ICabinetVeterinarRepository;
 import petexplorer.domain.CabinetVeterinar;
 
 public class CabinetVeterinarRepository implements ICabinetVeterinarRepository {
