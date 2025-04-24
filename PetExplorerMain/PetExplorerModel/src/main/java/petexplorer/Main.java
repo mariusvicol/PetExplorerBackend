@@ -2,10 +2,7 @@ package petexplorer;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import petexplorer.domain.CabinetVeterinar;
-import petexplorer.domain.PensiuneCanina;
-import petexplorer.domain.Salon;
-import petexplorer.domain.User;
+import petexplorer.domain.*;
 import petexplorer.utils.HibernateUtils;
 
 import java.util.List;
@@ -29,6 +26,10 @@ public class Main {
                 .createQuery("from Salon", Salon.class)
                 .getResultList();
 
+//        List<AnimalPierdut> animale_pierdute = session
+//                .createQuery("from AnimalPierdut", AnimalPierdut.class)
+//                .getResultList();
+
         session.close();
 
         System.out.println("Toți utilizatorii:");
@@ -50,5 +51,10 @@ public class Main {
         for (Salon salon : saloane) {
             System.out.println(salon);
         }
+
+//        System.out.println("Toate animalele pierdute");
+//        for (AnimalPierdut animal : animale_pierdute) {
+//            System.out.println(animal);
+//        }
     }
 }
