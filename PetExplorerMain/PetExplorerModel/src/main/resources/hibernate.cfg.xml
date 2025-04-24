@@ -25,5 +25,7 @@
         <mapping class="petexplorer.domain.Salon"/>
         <mapping class="petexplorer.domain.Magazin"/>
         <mapping class="petexplorer.domain.Farmacie"/>
+        <mapping class="petexplorer.domain.AnimalPierdut"/>
+        <mapping class="petexplorer.domain.Parc"/>
     </session-factory>
 </hibernate-configuration>

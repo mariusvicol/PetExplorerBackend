@@ -1,17 +1,16 @@
 package petexplorer;
 
+import petexplorer.animalpierdutrepos.AnimalPierdutRepository;
+import petexplorer.animalpierdutrepos.IAnimalPierdutRepository;
 import petexplorer.cabinetveterinarrepos.CabinetVeterinarRepository;
 import petexplorer.cabinetveterinarrepos.ICabinetVeterinarRepository;
-import petexplorer.domain.Farmacie;
-import petexplorer.domain.Magazin;
-import petexplorer.domain.PensiuneCanina;
-import petexplorer.domain.Salon;
-import petexplorer.domain.User;
-import petexplorer.domain.CabinetVeterinar;
+import petexplorer.domain.*;
 import petexplorer.farmacierepos.FarmacieVeterinaraRepository;
 import petexplorer.farmacierepos.IFarmacieVeterinaraRepository;
 import petexplorer.magazinerepos.IMagazinVeterinarRepository;
 import petexplorer.magazinerepos.MagazinVeterinarRepository;
+import petexplorer.parcrepos.IParcRepository;
+import petexplorer.parcrepos.ParcRepository;
 import petexplorer.pensiunecaninarepos.IPensiuneCaninaRepository;
 import petexplorer.pensiunecaninarepos.PensiuneCaninaRepository;
 import petexplorer.salonrepos.ISalonRepository;
@@ -60,6 +59,20 @@ public class Main {
         System.out.println("Toate cabinetele veterinare:");
         for (CabinetVeterinar cabinetVeterinar : cabinetVeterinarRepository.findAll()) {
             System.out.println(cabinetVeterinar);
+        }
+
+        System.out.println("----------------------------\n");
+
+        IAnimalPierdutRepository animalRepository = new AnimalPierdutRepository(HibernateUtils.getSessionFactory());
+        System.out.println("Toate animalele pierdute:");
+        for (AnimalPierdut animal : animalRepository.findAll()) {
+            System.out.println(animal);
+        }
+
+        IParcRepository parcRepository = new ParcRepository(HibernateUtils.getSessionFactory());
+        System.out.println("Toate cabinetele veterinare:");
+        for (Parc parc :parcRepository.findAll()) {
+            System.out.println(parc);
         }
 
         HibernateUtils.getSessionFactory().close();

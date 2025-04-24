@@ -2,12 +2,14 @@ package petexplorer.domain;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 
 @jakarta.persistence.Entity
 @Table(name = "animale_pierdute")
+
 
 public class AnimalPierdut extends Entity<Integer> implements Serializable {
 
@@ -126,5 +128,15 @@ public class AnimalPierdut extends Entity<Integer> implements Serializable {
                 ", nr_telefon='" + nr_telefon + '\'' +
                 ", data_caz=" + data_caz +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
     }
 }
