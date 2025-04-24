@@ -70,7 +70,7 @@ public class Main {
         }
 
         IParcRepository parcRepository = new ParcRepository(HibernateUtils.getSessionFactory());
-        System.out.println("Toate cabinetele veterinare:");
+        System.out.println("Toate parcurile :");
         for (Parc parc :parcRepository.findAll()) {
             System.out.println(parc);
         }
