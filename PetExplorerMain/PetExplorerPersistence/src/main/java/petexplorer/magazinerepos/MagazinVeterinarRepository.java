@@ -5,7 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import petexplorer.domain.Magazin;
 
-public class MagazinVeterinarRepository implements IMagazinVeterinarRepository {
+public class MagazinVeterinarRepository extends JpaRepository<Magazin, Integer> implements IMagazinVeterinarRepository {
     private final SessionFactory sessionFactory;
     public MagazinVeterinarRepository(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
