@@ -1,6 +1,8 @@
 package petexplorer.domain;
 
 import java.io.Serializable;
+import java.util.Objects;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 
@@ -82,6 +84,19 @@ public class PensiuneCanina extends Entity<Integer> implements Serializable {
 
     public void setNon_stop(Boolean non_stop) {
         this.non_stop = non_stop;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PensiuneCanina that = (PensiuneCanina) o;
+        return Objects.equals(latitude, that.latitude) && Objects.equals(longitude, that.longitude) && Objects.equals(name, that.name) && Objects.equals(nrTel, that.nrTel) && Objects.equals(non_stop, that.non_stop);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(latitude, longitude, name, nrTel, non_stop);
     }
 
     @Override

@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 @jakarta.persistence.Entity
 @Table(name = "saloane")
@@ -82,6 +83,19 @@ public class Salon extends Entity<Integer> implements Serializable {
 
     public void setNon_stop(Boolean non_stop) {
         this.non_stop = non_stop;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Salon salon = (Salon) o;
+        return Objects.equals(latitude, salon.latitude) && Objects.equals(longitude, salon.longitude) && Objects.equals(name, salon.name) && Objects.equals(nrTel, salon.nrTel) && Objects.equals(non_stop, salon.non_stop);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(latitude, longitude, name, nrTel, non_stop);
     }
 
     @Override
