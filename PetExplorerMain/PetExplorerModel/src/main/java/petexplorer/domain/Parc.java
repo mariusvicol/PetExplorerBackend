@@ -71,4 +71,18 @@ public class Parc extends Entity<Integer> implements Serializable {
                 ", non_stop=" + non_stop +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object obj){
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Parc parc = (Parc) obj;
+        return getId().equals(parc.getId());
+    }
+
+    @Override
+    public int hashCode() {
+
+        return getId().hashCode();
+    }
 }
