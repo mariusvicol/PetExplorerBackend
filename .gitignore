@@ -1,0 +1,21 @@
+# build files
+/build/
+/out/
+/target/
+/tmp/
+
+# class files
+*.class
+*.bin
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# Logs
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db

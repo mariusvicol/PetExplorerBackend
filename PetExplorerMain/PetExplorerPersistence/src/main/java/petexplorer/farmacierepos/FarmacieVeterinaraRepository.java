@@ -3,9 +3,10 @@ package petexplorer.farmacierepos;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.data.jpa.repository.JpaRepository;
 import petexplorer.domain.Farmacie;
 
-public class FarmacieVeterinaraRepository implements IFarmacieVeterinaraRepository {
+public class FarmacieVeterinaraRepository implements IFarmacieVeterinaraRepository  {
     private final SessionFactory sessionFactory;
     public FarmacieVeterinaraRepository(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
