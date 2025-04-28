@@ -1,16 +1,22 @@
 package petexplorer;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.*;
-import petexplorer.animalpierdutrepos.IAnimalPierdutRepository;
+import petexplorer.animalpierdutrepos.AnimalPierdutRepository;
 import petexplorer.domain.AnimalPierdut;
+
+import java.util.List;
 
 
 @RestController
 @RequestMapping("/api/animale_pierdute")
 public class AnimalPierdutController {
-    @Autowired
-    private IAnimalPierdutRepository repo;
+
+    private final AnimalPierdutRepository repo;
+
+    public AnimalPierdutController(AnimalPierdutRepository repo) {
+        this.repo = repo;
+    }
 
     @GetMapping
     public Iterable<AnimalPierdut> getAll() {
@@ -39,4 +45,5 @@ public class AnimalPierdutController {
         repo.delete(id);
     }
 }
+
 

@@ -5,8 +5,10 @@ package petexplorer.animalpierdutrepos;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Component;
 import petexplorer.domain.AnimalPierdut;
 
+@Component
 public class AnimalPierdutRepository implements IAnimalPierdutRepository {
 
     private final SessionFactory sessionFactory;

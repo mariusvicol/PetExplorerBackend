@@ -4,13 +4,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import petexplorer.domain.Parc;
 import petexplorer.parcrepos.IParcRepository;
+import petexplorer.parcrepos.ParcRepository;
 
 
 @RestController
 @RequestMapping("/api/parcuri")
 public class ParcController {
-    @Autowired
-    private IParcRepository repo;
+
+    private ParcRepository repo;
+
+    ParcController(ParcRepository repo) {
+        this.repo = repo;
+    }
 
     @GetMapping
     public Iterable<Parc> getAll() {
