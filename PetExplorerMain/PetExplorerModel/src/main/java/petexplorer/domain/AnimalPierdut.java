@@ -131,12 +131,16 @@ public class AnimalPierdut extends Entity<Integer> implements Serializable {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return false;
+    public boolean equals(Object obj){
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        AnimalPierdut animal = (AnimalPierdut) obj;
+        return getId().equals(animal.getId());
     }
 
     @Override
     public int hashCode() {
-        return 0;
+
+        return getId().hashCode();
     }
 }
