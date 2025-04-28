@@ -1,11 +1,12 @@
 package petexplorer.domain;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 import java.io.Serializable;
 
-@jakarta.persistence.Entity
+@jakarta.persistence.Entity(name = "CabinetVeterinar")
 @Table(name = "cabinete_veterinare")
 public class CabinetVeterinar extends Entity<Integer> implements Serializable {
 
