@@ -12,6 +12,10 @@ public class PensiuneCaninaController {
     @Autowired
     protected IPensiuneCaninaRepository repository;
 
+    public PensiuneCaninaController(IPensiuneCaninaRepository repository) {
+        this.repository = repository;
+    }
+
     @GetMapping
     public Iterable<PensiuneCanina> getAll() {
         return repository.findAll();

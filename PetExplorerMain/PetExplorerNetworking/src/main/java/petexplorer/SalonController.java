@@ -12,6 +12,10 @@ public class SalonController {
     @Autowired
     protected ISalonRepository repository;
 
+    public SalonController(ISalonRepository repository) {
+        this.repository = repository;
+    }
+
     @GetMapping
     public Iterable<Salon> getAll() {
         return repository.findAll();
