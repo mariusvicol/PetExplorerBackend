@@ -59,14 +59,18 @@ public class Farmacie extends Entity<Integer> implements Serializable {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return false;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Farmacie farmacie = (Farmacie) o;
+        return getId().equals(farmacie.getId());
     }
 
     @Override
     public int hashCode() {
-        return 0;
+        return getId().hashCode();
     }
+
 
     @Override
     public String toString() {
