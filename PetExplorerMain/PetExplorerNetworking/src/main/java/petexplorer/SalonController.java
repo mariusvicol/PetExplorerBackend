@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import petexplorer.domain.Salon;
 import petexplorer.salonrepos.ISalonRepository;
+import petexplorer.salonrepos.SalonRepository;
 
 
 @RestController

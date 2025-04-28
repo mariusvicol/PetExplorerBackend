@@ -3,9 +3,10 @@ package petexplorer.magazinerepos;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Component;
 import petexplorer.domain.Magazin;
-
-public class MagazinVeterinarRepository extends JpaRepository<Magazin, Integer> implements IMagazinVeterinarRepository {
+@Component
+public class MagazinVeterinarRepository implements IMagazinVeterinarRepository {
     private final SessionFactory sessionFactory;
     public MagazinVeterinarRepository(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;

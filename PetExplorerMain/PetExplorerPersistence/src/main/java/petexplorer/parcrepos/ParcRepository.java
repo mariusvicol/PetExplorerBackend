@@ -3,8 +3,10 @@ package petexplorer.parcrepos;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Component;
 import petexplorer.domain.Parc;
 
+@Component
 public class ParcRepository  implements IParcRepository {
 
     private final SessionFactory sessionFactory;

@@ -3,9 +3,11 @@ package petexplorer.salonrepos;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Component;
 import petexplorer.domain.PensiuneCanina;
 import petexplorer.domain.Salon;
 
+@Component
 public class SalonRepository implements ISalonRepository {
     private final SessionFactory sessionFactory;
 

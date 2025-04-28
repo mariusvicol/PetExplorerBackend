@@ -6,7 +6,7 @@ import petexplorer.domain.Magazin;
 import petexplorer.magazinerepos.IMagazinVeterinarRepository;
 
 @RestController
-@RequestMapping("/api/farmacii")
+@RequestMapping("/api/magazine")
 public class MagazineController {
     @Autowired
     private IMagazinVeterinarRepository repo;

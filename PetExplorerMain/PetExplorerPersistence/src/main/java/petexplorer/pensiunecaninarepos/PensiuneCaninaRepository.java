@@ -3,8 +3,10 @@ package petexplorer.pensiunecaninarepos;
 import org.hibernate.Transaction;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Component;
 import petexplorer.domain.PensiuneCanina;
 
+@Component
 public class PensiuneCaninaRepository implements IPensiuneCaninaRepository{
 
     private final SessionFactory sessionFactory;
