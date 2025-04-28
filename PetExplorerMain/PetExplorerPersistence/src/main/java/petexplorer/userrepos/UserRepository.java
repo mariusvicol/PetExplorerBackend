@@ -3,9 +3,11 @@ package petexplorer.userrepos;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Component;
 import petexplorer.domain.CabinetVeterinar;
 import petexplorer.domain.User;
 
+@Component
 public class UserRepository implements IUserRepository {
     private final SessionFactory sessionFactory;
 
