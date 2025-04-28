@@ -4,7 +4,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import petexplorer.domain.CabinetVeterinar;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CabinetVeterinarRepository implements ICabinetVeterinarRepository {
     private final SessionFactory sessionFactory;
     public CabinetVeterinarRepository(SessionFactory sessionFactory) {
