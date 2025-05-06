@@ -71,4 +71,13 @@ public class UserRepository implements IUserRepository {
             e.printStackTrace();
         }
     }
+
+    public User findByEmail(String email) {
+        try (var session = sessionFactory.openSession()) {
+            return session.createQuery("FROM User WHERE email = :email", User.class)
+                    .setParameter("email", email)
+                    .uniqueResult();
+        }
+    }
+
 }
