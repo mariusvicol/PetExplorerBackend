@@ -1,5 +1,6 @@
 package petexplorer.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 
@@ -18,8 +19,8 @@ public class User extends Entity<Integer> implements Serializable {
     @Column(nullable = false)
     private String nume;
 
-    @Column(nullable = true)
-    private String nr_telefon;
+    @Column(name = "nr_telefon")
+    private String nrTelefon;
 
     public User() {
     }
@@ -28,7 +29,7 @@ public class User extends Entity<Integer> implements Serializable {
         this.email = email;
         this.password = password;
         this.nume = name;
-        this.nr_telefon = nrTelefon;
+        this.nrTelefon = nrTelefon;
     }
 
     public String getEmail() {
@@ -55,12 +56,14 @@ public class User extends Entity<Integer> implements Serializable {
         this.nume = name;
     }
 
+    @JsonProperty("nrTelefon")
     public String getNrTelefon() {
-        return nr_telefon;
+        return nrTelefon;
     }
 
+    @JsonProperty("nrTelefon")
     public void setNrTelefon(String nrTelefon) {
-        this.nr_telefon = nrTelefon;
+        this.nrTelefon = nrTelefon;
     }
 
     @Override
@@ -70,7 +73,7 @@ public class User extends Entity<Integer> implements Serializable {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", name='" + nume + '\'' +
-                ", nrTelefon='" + nr_telefon + '\'' +
+                ", nrTelefon='" + nrTelefon + '\'' +
                 '}';
     }
 }
