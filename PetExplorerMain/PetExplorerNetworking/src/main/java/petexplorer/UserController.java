@@ -31,16 +31,32 @@ public class UserController {
     public User updateUser(@PathVariable Integer id, @RequestBody User updatedUser) {
         User existingUser = userRepository.findOne(id);
         if (existingUser != null) {
-            existingUser.setEmail(updatedUser.getEmail());
-            existingUser.setPassword(updatedUser.getPassword());
-            existingUser.setNume(updatedUser.getNume());
-            existingUser.setNrTelefon(updatedUser.getNrTelefon());
+            if (updatedUser.getEmail() != null && !updatedUser.getEmail().isBlank()) {
+                existingUser.setEmail(updatedUser.getEmail());
+            }
+
+            if (updatedUser.getNume() != null && !updatedUser.getNume().isBlank()) {
+                existingUser.setNume(updatedUser.getNume());
+            }
+
+            if (updatedUser.getNrTelefon() != null && !updatedUser.getNrTelefon().isBlank()) {
+                existingUser.setNrTelefon(updatedUser.getNrTelefon());
+            }
+
+            if (updatedUser.getPassword() != null && !updatedUser.getPassword().isBlank()) {
+                BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+                String hashedPassword = encoder.encode(updatedUser.getPassword());
+                existingUser.setPassword(hashedPassword);
+            }
+
             userRepository.update(existingUser);
             return existingUser;
         } else {
             return null;
         }
     }
+
+
 
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable Integer id) {
@@ -63,8 +79,8 @@ public class UserController {
     }
 
 
-    @PostMapping
-    public User createUser(@RequestBody User user) {
+    @PostMapping("/register")
+    public User register(@RequestBody User user) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         String hashedPassword = encoder.encode(user.getPassword());
         user.setPassword(hashedPassword);
