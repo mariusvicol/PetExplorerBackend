@@ -19,7 +19,7 @@ public class CabinetVeterinar extends Entity<Integer> implements Serializable {
     @Column(nullable = false)
     private String nume_cabinet;
 
-    @Column(nullable = true)
+    @Column(nullable = true, name = "numar_telefon")
     private String nrTelefon;
 
     @Column(nullable = false)
