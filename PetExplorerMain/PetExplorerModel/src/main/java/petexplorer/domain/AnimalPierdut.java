@@ -2,6 +2,7 @@ package petexplorer.domain;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 import jakarta.persistence.Column;
@@ -9,9 +10,8 @@ import jakarta.persistence.Table;
 
 @jakarta.persistence.Entity
 @Table(name = "animale_pierdute")
-
-
 public class AnimalPierdut extends Entity<Integer> implements Serializable {
+
 
     @Column(nullable = false)
     private Float latitudine;
@@ -28,16 +28,19 @@ public class AnimalPierdut extends Entity<Integer> implements Serializable {
     @Column(nullable = false)
     private String tip_caz;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String poza;
 
     @Column(nullable = false)
     private String nr_telefon;
 
     @Column(nullable = true)
-    private LocalDate data_caz;
+    private LocalDateTime data_caz;
 
-    public AnimalPierdut(Float latitudine, Float longitudine, String nume_animal, String descriere, String tip_caz, String poza, String nr_telefon, LocalDate data_caz) {
+    @Column(nullable = false)
+    private Integer id_user;
+
+    public AnimalPierdut(Float latitudine, Float longitudine, String nume_animal, String descriere, String tip_caz, String poza, String nr_telefon, LocalDateTime data_caz, Integer id_user) {
         this.latitudine = latitudine;
         this.longitudine = longitudine;
         this.nume_animal = nume_animal;
@@ -46,6 +49,7 @@ public class AnimalPierdut extends Entity<Integer> implements Serializable {
         this.poza = poza;
         this.nr_telefon = nr_telefon;
         this.data_caz = data_caz;
+        this.id_user = id_user;
     }
 
     public AnimalPierdut() {
@@ -80,9 +84,11 @@ public class AnimalPierdut extends Entity<Integer> implements Serializable {
         return nr_telefon;
     }
 
-    public LocalDate getData_caz() {
+    public LocalDateTime getData_caz() {
         return data_caz;
     }
+
+    public Integer getId_user() {return id_user;}
 
     public void setLatitudine(Float latitudine) {
         this.latitudine = latitudine;
@@ -112,9 +118,11 @@ public class AnimalPierdut extends Entity<Integer> implements Serializable {
         this.nr_telefon = nr_telefon;
     }
 
-    public void setData_caz(LocalDate data_caz) {
+    public void setData_caz(LocalDateTime data_caz) {
         this.data_caz = data_caz;
     }
+
+    public void setId_user(Integer id_user) {this.id_user = id_user;}
 
     @Override
     public String toString() {
@@ -127,6 +135,7 @@ public class AnimalPierdut extends Entity<Integer> implements Serializable {
                 ", poza='" + poza + '\'' +
                 ", nr_telefon='" + nr_telefon + '\'' +
                 ", data_caz=" + data_caz +
+                ", id_user=" + id_user +
                 '}';
     }
 
