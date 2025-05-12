@@ -40,15 +40,9 @@ public class AnimalPierdutController {
             @RequestParam("longitudine") float lng,
             @RequestParam("tip_caz") String tipCaz,
             @RequestParam("nr_telefon") String nrTelefon,
-            @RequestPart("imagine") MultipartFile imagine) throws IOException {
-
-        String uploadDir = System.getProperty("user.dir") + File.separator + "uploads" + File.separator;
-        String fileName = System.currentTimeMillis() + "_" + imagine.getOriginalFilename();
-        File destFile = new File(uploadDir + fileName);
-        destFile.getParentFile().mkdirs();
-
-        imagine.transferTo(destFile);
-
+            @RequestParam("id_user") Integer id_user,
+            @RequestPart(value = "imagine", required = false) MultipartFile imagine
+    ) throws IOException {
         AnimalPierdut animal = new AnimalPierdut();
         animal.setNume_animal(nume);
         animal.setDescriere(descriere);
@@ -56,11 +50,23 @@ public class AnimalPierdutController {
         animal.setLongitudine(lng);
         animal.setTip_caz(tipCaz);
         animal.setNr_telefon(nrTelefon);
-        animal.setPoza("/uploads/" + fileName);
         animal.setData_caz(LocalDateTime.now());
+        animal.setId_user(id_user);
+
+        if (imagine != null && !imagine.isEmpty()) {
+            String uploadDir = System.getProperty("user.dir") + File.separator + "uploads" + File.separator;
+            String fileName = System.currentTimeMillis() + "_" + imagine.getOriginalFilename();
+            File destFile = new File(uploadDir + fileName);
+            destFile.getParentFile().mkdirs();
+            imagine.transferTo(destFile);
+            animal.setPoza("/uploads/" + fileName);
+        } else {
+            animal.setPoza(null);
+        }
 
         return repo.save(animal);
     }
+
 
 
     @PutMapping("/{id}")
