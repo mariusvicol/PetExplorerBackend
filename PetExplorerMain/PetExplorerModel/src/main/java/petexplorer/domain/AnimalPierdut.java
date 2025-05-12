@@ -2,6 +2,7 @@ package petexplorer.domain;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 import jakarta.persistence.Column;
@@ -9,9 +10,8 @@ import jakarta.persistence.Table;
 
 @jakarta.persistence.Entity
 @Table(name = "animale_pierdute")
-
-
 public class AnimalPierdut extends Entity<Integer> implements Serializable {
+
 
     @Column(nullable = false)
     private Float latitudine;
@@ -35,9 +35,9 @@ public class AnimalPierdut extends Entity<Integer> implements Serializable {
     private String nr_telefon;
 
     @Column(nullable = true)
-    private LocalDate data_caz;
+    private LocalDateTime data_caz;
 
-    public AnimalPierdut(Float latitudine, Float longitudine, String nume_animal, String descriere, String tip_caz, String poza, String nr_telefon, LocalDate data_caz) {
+    public AnimalPierdut(Float latitudine, Float longitudine, String nume_animal, String descriere, String tip_caz, String poza, String nr_telefon, LocalDateTime data_caz) {
         this.latitudine = latitudine;
         this.longitudine = longitudine;
         this.nume_animal = nume_animal;
@@ -80,7 +80,7 @@ public class AnimalPierdut extends Entity<Integer> implements Serializable {
         return nr_telefon;
     }
 
-    public LocalDate getData_caz() {
+    public LocalDateTime getData_caz() {
         return data_caz;
     }
 
@@ -112,7 +112,7 @@ public class AnimalPierdut extends Entity<Integer> implements Serializable {
         this.nr_telefon = nr_telefon;
     }
 
-    public void setData_caz(LocalDate data_caz) {
+    public void setData_caz(LocalDateTime data_caz) {
         this.data_caz = data_caz;
     }
 
