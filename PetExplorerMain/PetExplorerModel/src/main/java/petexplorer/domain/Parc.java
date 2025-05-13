@@ -18,14 +18,14 @@ public class Parc extends Entity<Integer> implements Serializable {
     @Column(nullable = false)
     private String nume;
 
-    @Column(nullable = true)
-    private Boolean non_stop;
+    @Column(nullable = false, name = "non_stop")
+    private Boolean nonStop;
 
     public Parc(Float latitudine, Float longitudine, String nume, Boolean non_stop) {
         this.latitudine = latitudine;
         this.longitudine = longitudine;
         this.nume = nume;
-        this.non_stop = non_stop;
+        this.nonStop = non_stop;
     }
 
     public Parc() {}
@@ -42,8 +42,8 @@ public class Parc extends Entity<Integer> implements Serializable {
         return nume;
     }
 
-    public Boolean getNon_stop() {
-        return non_stop;
+    public Boolean getNonStop() {
+        return nonStop;
     }
 
     public void setLatitudine(Float latitudine) {
@@ -58,8 +58,8 @@ public class Parc extends Entity<Integer> implements Serializable {
         this.nume = nume;
     }
 
-    public void setNon_stop(Boolean non_stop) {
-        this.non_stop = non_stop;
+    public void setNonStop(Boolean non_stop) {
+        this.nonStop = non_stop;
     }
 
     @Override
@@ -68,7 +68,7 @@ public class Parc extends Entity<Integer> implements Serializable {
                 "latitudine=" + latitudine +
                 ", longitudine=" + longitudine +
                 ", nume='" + nume + '\'' +
-                ", non_stop=" + non_stop +
+                ", non_stop=" + nonStop +
                 '}';
     }
 
