@@ -35,7 +35,7 @@ public class SearchResultWrapper {
                 return session.get(Parc.class, id);
             case "Cabinet":
                 return session.get(CabinetVeterinar.class, id);
-            case "Magazine":
+            case "Magazin":
                 return session.get(Magazin.class, id);
             case "Farmacie":
                 return session.get(Farmacie.class, id);
