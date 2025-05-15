@@ -26,7 +26,7 @@ public class SearchSession {
                     "union all " +
                     "select cv.id as id, cv.nume_cabinet as name, 'Cabinet' as type from CabinetVeterinar cv where lower(cv.nume_cabinet) like :text " +
                     "union all " +
-                    "select m.id as id, m.nume as name, 'Magazine' as type from Magazin m where lower(m.nume) like :text " +
+                    "select m.id as id, m.nume as name, 'Magazin' as type from Magazin m where lower(m.nume) like :text " +
                     "union all " +
                     "select f.id as id, f.nume as name, 'Farmacie' as type from Farmacie f where lower(f.nume) like :text";
 
