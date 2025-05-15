@@ -115,4 +115,15 @@ public class LocatiiRepository implements ILocatiiRepository {
                     .list();
         }
     }
+
+    @Override
+    public LocatieFavorita findByUserAndLocation(Integer userId, Integer locationId, String locationType) {
+        try (Session session = sessionFactory.openSession()) {
+            return session.createQuery("from LocatieFavorita where user.id = :userId and entityId = :locationId and lower(locationType) = :locationType", LocatieFavorita.class)
+                    .setParameter("userId", userId)
+                    .setParameter("locationId", locationId)
+                    .setParameter("locationType", locationType)
+                    .uniqueResult();
+        }
+    }
 }

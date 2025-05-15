@@ -8,6 +8,10 @@ public class LocatieFavoritaDTO {
     private String phone;
     private boolean nonStop;
     private String type;
+    private Integer idLocation;
+    private Integer idUser;
+
+    public LocatieFavoritaDTO() {}
 
     public LocatieFavoritaDTO(double latitude, double longitude, String title, String type, boolean nonStop, String phone) {
         this.latitude = latitude;
@@ -16,6 +20,22 @@ public class LocatieFavoritaDTO {
         this.phone = phone;
         this.title = title;
         this.longitude = longitude;
+    }
+
+    public LocatieFavoritaDTO(Integer idUser, String locationType, Integer idLocation) {
+        this.idUser = idUser;
+        this.type = locationType;
+        this.idLocation = idLocation;
+    }
+
+    public LocatieFavoritaDTO(Integer id, double latitude, double longitude, String title, String type, boolean nonStop, String phone) {
+        this.latitude = latitude;
+        this.type = type;
+        this.nonStop = nonStop;
+        this.phone = phone;
+        this.title = title;
+        this.longitude = longitude;
+        this.idLocation = id;
     }
 
     public double getLatitude() {
@@ -64,6 +84,22 @@ public class LocatieFavoritaDTO {
 
     public void setNonStop(boolean nonStop) {
         this.nonStop = nonStop;
+    }
+
+    public Integer getIdLocation() {
+        return idLocation;
+    }
+
+    public void setIdLocation(Integer idLocation) {
+        this.idLocation = idLocation;
+    }
+
+    public Integer getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(Integer idUser) {
+        this.idUser = idUser;
     }
 
     @Override

@@ -11,4 +11,5 @@ public interface ILocatiiRepository extends Repository<Integer, LocatieFavorita>
 
     Object getReferredEntity(LocatieFavorita entity);
     List<LocatieFavorita> getLocationsForUser(Integer userId);
+    LocatieFavorita findByUserAndLocation(Integer userId, Integer locationId, String locationType);
 }
