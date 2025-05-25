@@ -1,6 +1,7 @@
 package petexplorer;
 
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import petexplorer.animalpierdutrepos.AnimalPierdutRepository;
@@ -41,7 +42,8 @@ public class AnimalPierdutController {
             @RequestParam("tip_caz") String tipCaz,
             @RequestParam("nr_telefon") String nrTelefon,
             @RequestParam("id_user") Integer id_user,
-            @RequestPart(value = "imagine", required = false) MultipartFile imagine
+            @RequestPart(value = "imagine", required = false) MultipartFile imagine,
+            @RequestParam("rezolvat") boolean rezolvat
     ) throws IOException {
         AnimalPierdut animal = new AnimalPierdut();
         animal.setNume_animal(nume);
@@ -52,6 +54,7 @@ public class AnimalPierdutController {
         animal.setNr_telefon(nrTelefon);
         animal.setData_caz(LocalDateTime.now());
         animal.setId_user(id_user);
+        animal.setRezolvat(rezolvat);
 
         if (imagine != null && !imagine.isEmpty()) {
             String uploadDir = System.getProperty("user.dir") + File.separator + "uploads" + File.separator;
@@ -80,6 +83,20 @@ public class AnimalPierdutController {
     public void delete(@PathVariable Integer id) {
         repo.delete(id);
     }
+
+    @PatchMapping("/{id}/rezolvat")
+    public ResponseEntity<Void> markAsResolved(@PathVariable Integer id) {
+        AnimalPierdut animal = repo.findOne(id);
+        if (animal == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        animal.setRezolvat(true);
+        repo.update(animal);
+
+        return ResponseEntity.ok().build();
+    }
+
 }
 
 
