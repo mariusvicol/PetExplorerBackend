@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import petexplorer.animalpierdutrepos.AnimalPierdutRepository;
 import petexplorer.domain.AnimalPierdut;
+import petexplorer.notification.NotificationService;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,9 +18,11 @@ import java.util.List;
 public class AnimalPierdutController {
 
     private final AnimalPierdutRepository repo;
+    private final NotificationService notificationService;
 
-    public AnimalPierdutController(AnimalPierdutRepository repo) {
+    public AnimalPierdutController(AnimalPierdutRepository repo, NotificationService notificationService) {
         this.repo = repo;
+        this.notificationService = notificationService;
     }
 
     @GetMapping
@@ -64,7 +67,10 @@ public class AnimalPierdutController {
             animal.setPoza(null);
         }
 
-        return repo.save(animal);
+        AnimalPierdut saved = repo.save(animal);
+        notificationService.notifyNewLostAnimal(saved);
+        System.out.println("TRIMIS WS: " + saved.getNume_animal());
+        return saved;
     }
 
 
