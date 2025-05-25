@@ -19,11 +19,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        // configurăm prefixul pentru topicuri la care vom publica
         registry.enableSimpleBroker("/topic", "/queue");
-        // prefix de pe care clapetele clienților vor trimite mesaje către @MessageMapping
         registry.setApplicationDestinationPrefixes("/app");
-        // prefix pentru mesaje direcționate unui singur user
         registry.setUserDestinationPrefix("/user");
     }
 }
