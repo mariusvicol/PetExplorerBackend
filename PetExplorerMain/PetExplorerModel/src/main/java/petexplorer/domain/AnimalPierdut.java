@@ -40,7 +40,10 @@ public class AnimalPierdut extends Entity<Integer> implements Serializable {
     @Column(nullable = false)
     private Integer id_user;
 
-    public AnimalPierdut(Float latitudine, Float longitudine, String nume_animal, String descriere, String tip_caz, String poza, String nr_telefon, LocalDateTime data_caz, Integer id_user) {
+    @Column(nullable = false)
+    private Boolean rezolvat;
+
+    public AnimalPierdut(Float latitudine, Float longitudine, String nume_animal, String descriere, String tip_caz, String poza, String nr_telefon, LocalDateTime data_caz, Integer id_user, Boolean rezolvat) {
         this.latitudine = latitudine;
         this.longitudine = longitudine;
         this.nume_animal = nume_animal;
@@ -50,6 +53,7 @@ public class AnimalPierdut extends Entity<Integer> implements Serializable {
         this.nr_telefon = nr_telefon;
         this.data_caz = data_caz;
         this.id_user = id_user;
+        this.rezolvat = rezolvat;
     }
 
     public AnimalPierdut() {
@@ -123,6 +127,10 @@ public class AnimalPierdut extends Entity<Integer> implements Serializable {
     }
 
     public void setId_user(Integer id_user) {this.id_user = id_user;}
+
+    public Boolean getRezolvat() {return rezolvat;}
+
+    public void setRezolvat(Boolean rezolvat) {this.rezolvat = rezolvat;}
 
     @Override
     public String toString() {
