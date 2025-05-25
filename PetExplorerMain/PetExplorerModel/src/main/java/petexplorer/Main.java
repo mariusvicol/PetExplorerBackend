@@ -1,7 +1,6 @@
 package petexplorer;
 
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 import petexplorer.domain.*;
 import petexplorer.utils.HibernateUtils;
 
@@ -34,6 +33,10 @@ public class Main {
                 .createQuery("from AnimalPierdut ", AnimalPierdut.class)
                 .getResultList();
 
+        List<LocatieFavorita> locatii = session
+                .createQuery("from LocatieFavorita", LocatieFavorita.class)
+                .getResultList();
+
         session.close();
 
         System.out.println("Toți utilizatorii:");
@@ -64,6 +67,11 @@ public class Main {
         System.out.println("Toate animalele pierdute");
         for (AnimalPierdut animal : animale) {
             System.out.println(animal);
+        }
+
+        System.out.println("Toate locatiile favorite");
+        for (LocatieFavorita l : locatii) {
+            System.out.println(l);
         }
     }
 }

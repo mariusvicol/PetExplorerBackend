@@ -11,9 +11,9 @@ import petexplorer.salonrepos.SalonRepository;
 @RequestMapping("/api/saloane")
 public class SalonController {
     @Autowired
-    protected ISalonRepository repository;
+    protected SalonRepository repository;
 
-    public SalonController(ISalonRepository repository) {
+    public SalonController(SalonRepository repository) {
         this.repository = repository;
     }
 
