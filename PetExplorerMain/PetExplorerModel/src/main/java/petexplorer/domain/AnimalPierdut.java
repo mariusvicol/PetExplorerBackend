@@ -92,6 +92,8 @@ public class AnimalPierdut extends Entity<Integer> implements Serializable {
         return data_caz;
     }
 
+    public Boolean getRezolvat() {return rezolvat;}
+
     public Integer getId_user() {return id_user;}
 
     public void setLatitudine(Float latitudine) {
@@ -127,8 +129,6 @@ public class AnimalPierdut extends Entity<Integer> implements Serializable {
     }
 
     public void setId_user(Integer id_user) {this.id_user = id_user;}
-
-    public Boolean getRezolvat() {return rezolvat;}
 
     public void setRezolvat(Boolean rezolvat) {this.rezolvat = rezolvat;}
 
