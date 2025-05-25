@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="postgres@aws-0-eu-central-1.pooler.supabase.com" uuid="c4221419-1d17-424a-9444-b658611d19d8">
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="bc4c1953-ccd2-4d40-b57a-f5af966b29c2">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+C:/Users/maria/Desktop/Year2/Semestru 2/MPP/PetExplorerBackend/PetExplorerMain/PetExplorerModel/src/main/resources/hibernate.cfg.xml</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres</jdbc-url>
       <jdbc-additional-properties>
@@ -13,13 +17,9 @@
       </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="bc4c1953-ccd2-4d40-b57a-f5af966b29c2">
+    <data-source source="LOCAL" name="postgres@aws-0-eu-central-1.pooler.supabase.com" uuid="ad7b5f58-be13-4dea-ba10-f4cf7679e4f9">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>Hibernate
-
-C:/Users/maria/Desktop/Year2/Semestru 2/MPP/PetExplorerBackend/PetExplorerMain/PetExplorerModel/src/main/resources/hibernate.cfg.xml</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres</jdbc-url>
       <jdbc-additional-properties>
