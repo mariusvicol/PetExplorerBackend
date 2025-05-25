@@ -56,9 +56,7 @@ public class AnimalPierdut extends Entity<Integer> implements Serializable {
         this.rezolvat = rezolvat;
     }
 
-    public AnimalPierdut() {
-
-    }
+    public AnimalPierdut() {}
 
     public Float getLatitudine() {
         return latitudine;
