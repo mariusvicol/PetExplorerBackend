@@ -19,3 +19,9 @@
 # OS junk
 .DS_Store
 Thumbs.db
+
+.gradle/
+build/
+*.lock
+*.jar
+*.probe
