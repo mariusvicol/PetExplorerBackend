@@ -99,6 +99,7 @@ public class AnimalPierdutController {
 
         animal.setRezolvat(true);
         repo.update(animal);
+        notificationService.notifyMarkAsResolved(animal);
 
         return ResponseEntity.ok().build();
     }

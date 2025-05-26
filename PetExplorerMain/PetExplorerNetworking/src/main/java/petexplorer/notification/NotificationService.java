@@ -20,6 +20,10 @@ public class NotificationService {
         messagingTemplate.convertAndSend("/topic/animale-pierdute", animal);
     }
 
+    public void notifyMarkAsResolved(AnimalPierdut animal) {
+        messagingTemplate.convertAndSend("/topic/animale-pierdute/resolved", animal);
+    }
+
     /**
      * (Opțional) trimite unui user anume:
      */
