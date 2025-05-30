@@ -5,9 +5,6 @@
     <content url="file://$MODULE_DIR$/PetExplorerMain">
       <excludeFolder url="file://$MODULE_DIR$/PetExplorerMain/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/PetExplorerMain/build" />
-      <excludeFolder url="file://$MODULE_DIR$/PetExplorerMain/.idea/dataSources" />
-      <excludeFolder url="file://$MODULE_DIR$/PetExplorerMain/.idea/modules" />
-      <excludeFolder url="file://$MODULE_DIR$/PetExplorerMain/.idea/shelf" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

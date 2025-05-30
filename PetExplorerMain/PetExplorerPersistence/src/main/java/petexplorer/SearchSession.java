@@ -3,7 +3,7 @@ package petexplorer;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Component;
-import petexplorer.utils.SearchResultWrapper;
+import petexplorer.utils.SearchResultDTO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,33 +16,41 @@ public class SearchSession {
         this.sessionFactory = sessionFactory;
     }
 
-    public List<Object[]> search(String text) {
-        try (Session session = sessionFactory.openSession()) {
-            String hql = "select s.id as id, s.name as name, 'Salon' as type from Salon s where lower(s.name) like :text " +
-                    "union all " +
-                    "select pc.id as id, pc.name as name, 'Pensiune Canina' as type from PensiuneCanina pc where lower(pc.name) like :text " +
-                    "union all " +
-                    "select p.id as id, p.nume as name, 'Parc' as type from Parc p where lower(p.nume) like :text " +
-                    "union all " +
-                    "select cv.id as id, cv.nume_cabinet as name, 'Cabinet' as type from CabinetVeterinar cv where lower(cv.nume_cabinet) like :text " +
-                    "union all " +
-                    "select m.id as id, m.nume as name, 'Magazin' as type from Magazin m where lower(m.nume) like :text " +
-                    "union all " +
-                    "select f.id as id, f.nume as name, 'Farmacie' as type from Farmacie f where lower(f.nume) like :text";
+    public List<SearchResultDTO> search(String text) {
+        List<SearchResultDTO> results = new ArrayList<>();
 
-            return session.createQuery(hql, Object[].class)
+        try (Session session = sessionFactory.openSession()) {
+            String hql =
+                    "select s.id, s.name, 'Salon', s.latitude, s.longitude, s.nrTel, s.non_stop from Salon s where lower(s.name) like :text " +
+                            "union all " +
+                            "select pc.id, pc.name, 'Pensiune Canină', pc.latitude, pc.longitude, pc.nrTel, pc.non_stop from PensiuneCanina pc where lower(pc.name) like :text " +
+                            "union all " +
+                            "select p.id, p.nume, 'Parc', p.latitudine, p.longitudine, cast('' as string), cast(false as boolean) from Parc p where lower(p.nume) like :text " +
+                            "union all " +
+                            "select cv.id, cv.nume_cabinet, 'Cabinet Veterinar', cv.latitudine, cv.longitudine, cv.nrTelefon, cv.non_stop from CabinetVeterinar cv where lower(cv.nume_cabinet) like :text " +
+                            "union all " +
+                            "select m.id, m.nume, 'Magazin', m.latitudine, m.longitudine, cast('' as string), m.non_stop from Magazin m where lower(m.nume) like :text " +
+                            "union all " +
+                            "select f.id, f.nume, 'Farmacie Veterinară', f.latitudine, f.longitudine, cast('' as string), f.non_stop from Farmacie f where lower(f.nume) like :text";
+
+            List<Object[]> rows = session.createQuery(hql, Object[].class)
                     .setParameter("text", "%" + text.toLowerCase() + "%")
                     .list();
-        }
-    }
 
+            for (Object[] row : rows) {
+                Integer id = (Integer) row[0];
+                String title = (String) row[1];
+                String type = (String) row[2];
+                Float lat = (Float) row[3];
+                Float lon = (Float) row[4];
+                String phone = (String) row[5];
+                Boolean nonStop = (Boolean) row[6];
 
-    public void convertEntity(List<SearchResultWrapper> all) {
-        try (Session session = sessionFactory.openSession()) {
-            for (SearchResultWrapper wrapper : all) {
-                Object entity = wrapper.getEntity(session);
-                System.out.println("Entitate incarcata: " + entity);
+                results.add(new SearchResultDTO(lat, lon, title, phone, nonStop, type, id));
             }
         }
+
+        return results;
     }
+
 }

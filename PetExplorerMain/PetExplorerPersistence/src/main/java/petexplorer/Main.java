@@ -10,6 +10,9 @@ import petexplorer.locatiirepos.LocatiiRepository;
 import petexplorer.magazinerepos.IMagazinVeterinarRepository;
 import petexplorer.magazinerepos.MagazinVeterinarRepository;
 import petexplorer.utils.HibernateUtils;
+import petexplorer.utils.SearchResultDTO;
+
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,6 +34,13 @@ public class Main {
         for (LocatieFavorita l : locatiiRepository.findAll()) {
             System.out.println(l);
             System.out.println("Entitatea referita: " + locatiiRepository.getReferredEntity(l));
+        }
+
+        System.out.println("Rezultate cautare pentru 'anima':");
+        SearchSession searchSession = new SearchSession(HibernateUtils.getSessionFactory());
+        List<SearchResultDTO> results = searchSession.search("anima");
+        for (SearchResultDTO result : results) {
+            System.out.println(result);
         }
 
         HibernateUtils.getSessionFactory().close();

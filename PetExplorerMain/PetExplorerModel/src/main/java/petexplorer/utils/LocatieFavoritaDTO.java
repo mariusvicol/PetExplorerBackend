@@ -1,4 +1,4 @@
-package petexplorer.domain;
+package petexplorer.utils;
 
 public class LocatieFavoritaDTO {
 

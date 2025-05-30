@@ -13,10 +13,8 @@
       <module name="PetExplorerMain.PetExplorerPersistence" target="23" />
       <module name="PetExplorerMain.PetExplorerPersistence.main" target="23" />
       <module name="PetExplorerMain.PetExplorerPersistence.test" target="23" />
-      <module name="PetExplorerMain.PetExplorerServer" target="23" />
       <module name="PetExplorerMain.PetExplorerServer.main" target="23" />
       <module name="PetExplorerMain.PetExplorerServer.test" target="23" />
-      <module name="PetExplorerMain.PetExplorerServices" target="23" />
       <module name="PetExplorerMain.PetExplorerServices.main" target="23" />
       <module name="PetExplorerMain.PetExplorerServices.test" target="23" />
       <module name="PetExplorerMain.test" target="23" />

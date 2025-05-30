@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import petexplorer.domain.*;
 import petexplorer.domain.enums.LocationType;
-import petexplorer.locatiirepos.ILocatiiRepository;
 import petexplorer.locatiirepos.LocatiiRepository;
 import petexplorer.userrepos.UserRepository;
+import petexplorer.utils.LocatieFavoritaDTO;
 
 import java.util.List;
 import java.util.Objects;
