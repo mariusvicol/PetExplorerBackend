@@ -12,6 +12,7 @@ cu locații de interes pentru deținătorii de animale de companie, precum:
 - Pensiuni canine
 - Saloane de toaletaj
 - Animale pierdute
+- Locații favorite
 
 Datele sunt gestionate într-o bază de date PostgreSQL.
 
