@@ -3,7 +3,7 @@
   <span style="font-size: 1.2rem; font-style: italic;">– Server Java al aplicației destinate tuturor deținătorilor de animale de companie</span>
 </h1>
 
-<h3>📌 Descriere:</h3>
+## 📌 Descriere:
 Acest repository conține o aplicație dezvoltată în Java ce reprezintă partea de **server** al aplicației interactive
 cu locații de interes pentru deținătorii de animale de companie, precum:
 - Farmacii veterinare
