@@ -12,9 +12,9 @@ public class DataSourceConfig {
     @Bean
     public DataSource dataSource() {
         return DataSourceBuilder.create()
-                .url("jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres")
-                .username("postgres.lugkzbamwteflagftckw")
-                .password("petexplorer.2004")
+                .url("jdbc:postgresql://aws-1-eu-north-1.pooler.supabase.com:5432/postgres")
+                .username("postgres.dcduwmhhemvowdwtkfeq")
+                .password("Petexplorer2025")
                 .driverClassName("org.postgresql.Driver")
                 .build();
     }
