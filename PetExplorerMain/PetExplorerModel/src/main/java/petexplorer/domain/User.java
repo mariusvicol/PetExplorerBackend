@@ -13,7 +13,7 @@ public class User extends Entity<Integer> implements Serializable {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String password;
 
     @Column(nullable = false)
@@ -21,6 +21,18 @@ public class User extends Entity<Integer> implements Serializable {
 
     @Column(name = "nr_telefon")
     private String nrTelefon;
+
+    @Column(name = "google_id", unique = true)
+    private String googleId;
+
+    @Column(name = "auth_provider")
+    private String authProvider;
+
+    @Column(name = "totp_secret")
+    private String totpSecret;
+
+    @Column(name = "totp_enabled")
+    private Boolean totpEnabled = false;
 
     public User() {
     }
@@ -30,6 +42,15 @@ public class User extends Entity<Integer> implements Serializable {
         this.password = password;
         this.nume = name;
         this.nrTelefon = nrTelefon;
+        this.authProvider = "EMAIL";
+    }
+
+    public User(String email, String name, String googleId) {
+        this.email = email;
+        this.nume = name;
+        this.googleId = googleId;
+        this.authProvider = "GOOGLE";
+        this.password = null;
     }
 
     public String getEmail() {
@@ -66,6 +87,38 @@ public class User extends Entity<Integer> implements Serializable {
         this.nrTelefon = nrTelefon;
     }
 
+    public String getGoogleId() {
+        return googleId;
+    }
+
+    public void setGoogleId(String googleId) {
+        this.googleId = googleId;
+    }
+
+    public String getAuthProvider() {
+        return authProvider;
+    }
+
+    public void setAuthProvider(String authProvider) {
+        this.authProvider = authProvider;
+    }
+
+    public String getTotpSecret() {
+        return totpSecret;
+    }
+
+    public void setTotpSecret(String totpSecret) {
+        this.totpSecret = totpSecret;
+    }
+
+    public Boolean getTotpEnabled() {
+        return totpEnabled != null ? totpEnabled : false;
+    }
+
+    public void setTotpEnabled(Boolean totpEnabled) {
+        this.totpEnabled = totpEnabled;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -74,6 +127,9 @@ public class User extends Entity<Integer> implements Serializable {
                 ", password='" + password + '\'' +
                 ", name='" + nume + '\'' +
                 ", nrTelefon='" + nrTelefon + '\'' +
+                ", googleId='" + googleId + '\'' +
+                ", authProvider='" + authProvider + '\'' +
+                ", totpEnabled=" + totpEnabled +
                 '}';
     }
 }
