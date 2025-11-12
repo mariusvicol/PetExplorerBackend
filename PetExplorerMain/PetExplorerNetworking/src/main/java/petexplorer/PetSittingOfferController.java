@@ -39,7 +39,6 @@ public class PetSittingOfferController {
         offer.setId(id);
         PetSittingOffer existing = repository.findOne(id);
         if (existing == null) return null;
-        // Basic creator check (client must send same userId). Replace with real auth when available.
         if (offer.getUserId() == null || !offer.getUserId().equals(existing.getUserId())) {
             throw new RuntimeException("Doar creatorul poate edita oferta.");
         }
