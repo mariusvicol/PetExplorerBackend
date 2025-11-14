@@ -92,7 +92,6 @@ public class UserController {
             throw new RuntimeException("ID token is required");
         }
 
-        // Verify Google ID token
         GoogleIdTokenVerifier verifier = GoogleOAuthService.createVerifier(googleClientId);
         GoogleOAuthService.GoogleUserInfo googleUserInfo = null;
         
@@ -114,15 +113,12 @@ public class UserController {
             throw new RuntimeException("Failed to verify Google ID token");
         }
 
-        // Check if user exists by Google ID or email
         User user = userRepository.findByEmail(googleUserInfo.getEmail());
         
         if (user == null) {
-            // Create new user
             user = new User(googleUserInfo.getEmail(), googleUserInfo.getName(), googleUserInfo.getGoogleId());
             user = userRepository.save(user);
         } else {
-            // Update existing user with Google ID if not already set
             if (user.getGoogleId() == null || user.getGoogleId().isEmpty()) {
                 user.setGoogleId(googleUserInfo.getGoogleId());
                 user.setAuthProvider("GOOGLE");

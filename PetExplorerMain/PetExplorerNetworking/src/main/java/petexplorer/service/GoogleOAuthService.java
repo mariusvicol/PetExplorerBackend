@@ -14,20 +14,13 @@ public class GoogleOAuthService {
     private final GoogleIdTokenVerifier verifier;
 
     public GoogleOAuthService() {
-        // Initialize Google ID Token Verifier
-        // Note: For production, you should configure the client ID from application.properties
         this.verifier = new GoogleIdTokenVerifier.Builder(
                 new NetHttpTransport(),
                 GsonFactory.getDefaultInstance())
-                .setAudience(Collections.singletonList("YOUR_CLIENT_ID")) // Will be configured via properties
+                .setAudience(Collections.singletonList("YOUR_CLIENT_ID"))
                 .build();
     }
 
-    /**
-     * Verifies a Google ID token and extracts user information
-     * @param idTokenString The ID token string from Google Sign-In
-     * @return GoogleUserInfo containing email, name, and Google ID, or null if invalid
-     */
     public GoogleUserInfo verifyToken(String idTokenString) {
         try {
             GoogleIdToken idToken = verifier.verify(idTokenString);
@@ -47,18 +40,9 @@ public class GoogleOAuthService {
         return null;
     }
 
-    /**
-     * Sets the Google Client ID for token verification
-     * This should be called during initialization with the actual client ID
-     */
     public void setClientId(String clientId) {
-        // Note: In a real implementation, you'd recreate the verifier with the new client ID
-        // For now, we'll handle this in the controller by creating a new verifier
     }
 
-    /**
-     * Creates a verifier with a specific client ID
-     */
     public static GoogleIdTokenVerifier createVerifier(String clientId) {
         return new GoogleIdTokenVerifier.Builder(
                 new NetHttpTransport(),
@@ -67,9 +51,6 @@ public class GoogleOAuthService {
                 .build();
     }
 
-    /**
-     * Inner class to hold Google user information
-     */
     public static class GoogleUserInfo {
         private final String email;
         private final String name;
