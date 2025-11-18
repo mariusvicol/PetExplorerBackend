@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import petexplorer.utils.SearchResultDTO;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @RestController
 @RequestMapping("/api")
@@ -16,9 +17,7 @@ public class SearchController {
     private SearchSession searchSession;
 
     @GetMapping("/search")
-    public List<SearchResultDTO> search(@RequestParam String text) {
+    public CompletableFuture<List<SearchResultDTO>> search(@RequestParam String text) {
         return searchSession.search(text);
     }
-
-
 }

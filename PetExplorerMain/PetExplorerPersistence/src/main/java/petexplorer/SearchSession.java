@@ -2,11 +2,14 @@ package petexplorer;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import petexplorer.utils.SearchResultDTO;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @Component
 public class SearchSession {
@@ -16,9 +19,12 @@ public class SearchSession {
         this.sessionFactory = sessionFactory;
     }
 
-    public List<SearchResultDTO> search(String text) {
-        List<SearchResultDTO> results = new ArrayList<>();
+    @Async("searchTaskExecutor")
+    @Cacheable(value = "searchQueries", key = "#text.toLowerCase()")
+    public CompletableFuture<List<SearchResultDTO>> search(String text) {
+        String searchText = "%" + text.toLowerCase() + "%";
 
+        List<SearchResultDTO> results = new ArrayList<>();
         try (Session session = sessionFactory.openSession()) {
             String hql =
                     "select s.id, s.name, 'Salon', s.latitude, s.longitude, s.nrTel, s.non_stop from Salon s where lower(s.name) like :text " +
@@ -34,7 +40,7 @@ public class SearchSession {
                             "select f.id, f.nume, 'Farmacie Veterinară', f.latitudine, f.longitudine, cast('' as string), f.non_stop from Farmacie f where lower(f.nume) like :text";
 
             List<Object[]> rows = session.createQuery(hql, Object[].class)
-                    .setParameter("text", "%" + text.toLowerCase() + "%")
+                    .setParameter("text", searchText)
                     .list();
 
             for (Object[] row : rows) {
@@ -50,7 +56,6 @@ public class SearchSession {
             }
         }
 
-        return results;
+        return CompletableFuture.completedFuture(results);
     }
-
 }

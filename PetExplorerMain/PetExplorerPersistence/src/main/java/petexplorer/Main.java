@@ -13,6 +13,8 @@ import petexplorer.utils.HibernateUtils;
 import petexplorer.utils.SearchResultDTO;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 public class Main {
     public static void main(String[] args) {
@@ -38,9 +40,16 @@ public class Main {
 
         System.out.println("Rezultate cautare pentru 'anima':");
         SearchSession searchSession = new SearchSession(HibernateUtils.getSessionFactory());
-        List<SearchResultDTO> results = searchSession.search("anima");
-        for (SearchResultDTO result : results) {
-            System.out.println(result);
+        CompletableFuture<List<SearchResultDTO>> resultsFuture = searchSession.search("anima");
+        try {
+            List<SearchResultDTO> results = resultsFuture.get();
+
+            for (SearchResultDTO result : results) {
+                System.out.println(result);
+            }
+        } catch (InterruptedException | ExecutionException e) {
+            System.err.println("Error retrieving search results: " + e.getMessage());
+            e.printStackTrace();
         }
 
         HibernateUtils.getSessionFactory().close();
