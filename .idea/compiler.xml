@@ -2,22 +2,22 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="PetExplorerMain" target="23" />
-      <module name="PetExplorerMain.main" target="23" />
-      <module name="PetExplorerMain.PetExplorerModel" target="23" />
-      <module name="PetExplorerMain.PetExplorerModel.main" target="23" />
-      <module name="PetExplorerMain.PetExplorerModel.test" target="23" />
-      <module name="PetExplorerMain.PetExplorerNetworking" target="23" />
-      <module name="PetExplorerMain.PetExplorerNetworking.main" target="23" />
-      <module name="PetExplorerMain.PetExplorerNetworking.test" target="23" />
-      <module name="PetExplorerMain.PetExplorerPersistence" target="23" />
-      <module name="PetExplorerMain.PetExplorerPersistence.main" target="23" />
-      <module name="PetExplorerMain.PetExplorerPersistence.test" target="23" />
+      <module name="PetExplorerMain" target="21" />
+      <module name="PetExplorerMain.main" target="21" />
+      <module name="PetExplorerMain.PetExplorerModel" target="21" />
+      <module name="PetExplorerMain.PetExplorerModel.main" target="21" />
+      <module name="PetExplorerMain.PetExplorerModel.test" target="21" />
+      <module name="PetExplorerMain.PetExplorerNetworking" target="21" />
+      <module name="PetExplorerMain.PetExplorerNetworking.main" target="21" />
+      <module name="PetExplorerMain.PetExplorerNetworking.test" target="21" />
+      <module name="PetExplorerMain.PetExplorerPersistence" target="21" />
+      <module name="PetExplorerMain.PetExplorerPersistence.main" target="21" />
+      <module name="PetExplorerMain.PetExplorerPersistence.test" target="21" />
       <module name="PetExplorerMain.PetExplorerServer.main" target="23" />
       <module name="PetExplorerMain.PetExplorerServer.test" target="23" />
       <module name="PetExplorerMain.PetExplorerServices.main" target="23" />
       <module name="PetExplorerMain.PetExplorerServices.test" target="23" />
-      <module name="PetExplorerMain.test" target="23" />
+      <module name="PetExplorerMain.test" target="21" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
