@@ -34,6 +34,9 @@ public class User extends Entity<Integer> implements Serializable {
     @Column(name = "totp_enabled")
     private Boolean totpEnabled = false;
 
+    @Column(name = "role")
+    private String role;
+
     public User() {
     }
 
@@ -43,6 +46,7 @@ public class User extends Entity<Integer> implements Serializable {
         this.nume = name;
         this.nrTelefon = nrTelefon;
         this.authProvider = "EMAIL";
+        this.role = "USER";
     }
 
     public User(String email, String name, String googleId) {
@@ -51,6 +55,7 @@ public class User extends Entity<Integer> implements Serializable {
         this.googleId = googleId;
         this.authProvider = "GOOGLE";
         this.password = null;
+        this.role = "USER";
     }
 
     public String getEmail() {
@@ -111,6 +116,7 @@ public class User extends Entity<Integer> implements Serializable {
         this.totpSecret = totpSecret;
     }
 
+
     public Boolean getTotpEnabled() {
         return totpEnabled != null ? totpEnabled : false;
     }
@@ -118,6 +124,8 @@ public class User extends Entity<Integer> implements Serializable {
     public void setTotpEnabled(Boolean totpEnabled) {
         this.totpEnabled = totpEnabled;
     }
+
+    public String getRole() { return this.role; }
 
     @Override
     public String toString() {
@@ -130,6 +138,7 @@ public class User extends Entity<Integer> implements Serializable {
                 ", googleId='" + googleId + '\'' +
                 ", authProvider='" + authProvider + '\'' +
                 ", totpEnabled=" + totpEnabled +
+                ", role='" + role + '\'' +
                 '}';
     }
 }
