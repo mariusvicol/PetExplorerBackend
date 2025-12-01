@@ -70,7 +70,7 @@ async def generate_pet_description(image_bytes: bytes) -> dict:
     except Exception as e:
         raise e
 
-@app.post("/analyze-pet")
+@app.post("/python_app/analyze-pet")
 async def analyze_pet(file: UploadFile = File(...)):
     if not GEMINI_API_KEY:
         return JSONResponse(
@@ -147,4 +147,4 @@ async def analyze_pet(file: UploadFile = File(...)):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8001)
