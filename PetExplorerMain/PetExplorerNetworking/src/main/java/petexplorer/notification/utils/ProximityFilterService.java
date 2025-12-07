@@ -1,12 +1,14 @@
 package petexplorer.notification.utils;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import petexplorer.service.UserLocationService;
 import petexplorer.utils.UserLocationVO;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class ProximityFilterService {
     private final UserLocationService userLocationService;
     private final DistanceCalculator distanceCalculator;
