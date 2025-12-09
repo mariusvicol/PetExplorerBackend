@@ -1,22 +1,12 @@
 package petexplorer.utils;
 
 public class UserLocationDTO {
-    private int userId;
     private double latitude;
     private double longitude;
 
-    public UserLocationDTO(int userId, double latitude, double longitude) {
-        this.userId = userId;
+    public UserLocationDTO(double latitude, double longitude) {
         this.latitude = latitude;
         this.longitude = longitude;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
     }
 
     public double getLatitude() {
@@ -37,8 +27,7 @@ public class UserLocationDTO {
 
     public String toString() {
         return "UserLocationDTO{" +
-                "userId=" + userId +
-                " ,latitude=" + latitude +
+                "latitude=" + latitude +
                 " ,longitude=" + longitude +
                 "}";
     }
