@@ -1,11 +1,11 @@
-package petexplorer.utils;
+package petexplorer.domain;
 
-public class UserLocationVO {
+public class UserLocation {
     private final int userId;
     private final double latitude;
     private final double longitude;
 
-    public UserLocationVO(int userId, double latitude, double longitude) {
+    public UserLocation(int userId, double latitude, double longitude) {
         this.userId = userId;
         this.latitude = latitude;
         this.longitude = longitude;

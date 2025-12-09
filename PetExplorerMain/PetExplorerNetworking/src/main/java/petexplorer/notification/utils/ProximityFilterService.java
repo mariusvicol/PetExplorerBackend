@@ -3,7 +3,7 @@ package petexplorer.notification.utils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import petexplorer.service.UserLocationService;
-import petexplorer.utils.UserLocationVO;
+import petexplorer.domain.UserLocation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,7 @@ public class ProximityFilterService {
 
     public Iterable<Integer> getUsersInProximity(double eventLatitude, double eventLongitude) {
         List<Integer> usersInProximity = new ArrayList<>();
-        for (UserLocationVO userLocation: userLocationService.getUserLocations()) {
+        for (UserLocation userLocation: userLocationService.getUserLocations()) {
             if (distanceCalculator.getDistance(userLocation.getLatitude(), userLocation.getLongitude(), eventLatitude, eventLongitude) <= notificationRadius) {
                 usersInProximity.add(userLocation.getUserId());
             }

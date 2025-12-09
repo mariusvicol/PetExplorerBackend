@@ -1,24 +1,24 @@
 package petexplorer.service;
 
 import org.springframework.stereotype.Service;
-import petexplorer.utils.UserLocationVO;
+import petexplorer.domain.UserLocation;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @Service
 public class UserLocationService {
-    private final Map<Integer, UserLocationVO> userLocations;
+    private final Map<Integer, UserLocation> userLocations;
 
     public UserLocationService() {
-        userLocations = new HashMap<Integer, UserLocationVO>();
+        userLocations = new HashMap<Integer, UserLocation>();
     }
 
-    public void save(UserLocationVO userLocation) {
+    public void save(UserLocation userLocation) {
         userLocations.put(userLocation.getUserId(), userLocation);
     }
 
-    public Iterable<UserLocationVO> getUserLocations() {
+    public Iterable<UserLocation> getUserLocations() {
         return userLocations.values();
     }
 }

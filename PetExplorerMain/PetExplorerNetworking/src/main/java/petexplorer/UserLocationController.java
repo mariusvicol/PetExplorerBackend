@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import petexplorer.service.UserLocationService;
 import petexplorer.utils.UserLocationDTO;
-import petexplorer.utils.UserLocationVO;
+import petexplorer.domain.UserLocation;
 
 @RestController
 @RequestMapping("api/user_locations")
@@ -20,7 +20,7 @@ public class UserLocationController {
 
     @PostMapping
     public ResponseEntity<UserLocationDTO> add(@RequestBody UserLocationDTO userLocationDTO) {
-        userLocationService.save(new UserLocationVO(
+        userLocationService.save(new UserLocation(
                 userLocationDTO.getUserId(),
                 userLocationDTO.getLatitude(),
                 userLocationDTO.getLongitude()
@@ -31,7 +31,7 @@ public class UserLocationController {
 
     @PutMapping("/{user_id}")
     public ResponseEntity<UserLocationDTO> update(@RequestBody UserLocationDTO userLocationDTO, @PathVariable Integer user_id) {
-        userLocationService.save(new UserLocationVO(
+        userLocationService.save(new UserLocation(
                 user_id,
                 userLocationDTO.getLatitude(),
                 userLocationDTO.getLongitude()
