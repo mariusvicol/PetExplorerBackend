@@ -18,17 +18,6 @@ public class UserLocationController {
         this.userLocationService = userLocationService;
     }
 
-    @PostMapping
-    public ResponseEntity<UserLocationDTO> add(@RequestBody UserLocationDTO userLocationDTO) {
-        userLocationService.save(new UserLocation(
-                userLocationDTO.getUserId(),
-                userLocationDTO.getLatitude(),
-                userLocationDTO.getLongitude()
-                )
-        );
-        return new ResponseEntity<>(userLocationDTO, HttpStatus.CREATED);
-    }
-
     @PutMapping("/{user_id}")
     public ResponseEntity<UserLocationDTO> update(@RequestBody UserLocationDTO userLocationDTO, @PathVariable Integer user_id) {
         userLocationService.save(new UserLocation(

@@ -16,7 +16,7 @@ public class NotificationServiceAll implements NotificationService {
      * Trimite către toți clienții abonați la topicul /topic/animale-pierdute
      */
     public void notifyNewLostAnimal(AnimalPierdut animal) {
-        messagingTemplate.convertAndSend("/topic/animale-pierdute", animal);
+        messagingTemplate.convertAndSend("t ", animal);
     }
 
     public void notifyMarkAsResolved(AnimalPierdut animal) {
